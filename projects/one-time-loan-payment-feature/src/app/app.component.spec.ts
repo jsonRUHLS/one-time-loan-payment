@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'one-time-loan-payment' title`, () => {
+  it(`should have the 'one-time-loan-payment-feature' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('one-time-loan-payment');
+    expect(app.title).toEqual('one-time-loan-payment-feature');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, one-time-loan-payment');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, one-time-loan-payment-feature');
   });
 });

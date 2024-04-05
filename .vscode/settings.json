@@ -1,8 +1,17 @@
 {
     "cSpell.words": [
         "fnpm",
+        "inputmode",
         "iterm",
+        "iTerm2",
         "jsonruhls",
-        "iTerm2"
-    ]
+        "maxlength",
+        "numberonly"
+    ],
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "style": "scss",
+            "externalTemplate": true
+        }
+    }
 }

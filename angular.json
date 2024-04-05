@@ -3,36 +3,82 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "one-time-loan-payment": {
+    "shared-components": {
+      "projectType": "library",
+      "root": "projects/shared-components",
+      "sourceRoot": "projects/shared-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/shared-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/shared-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/shared-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/shared-components/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "one-time-loan-payment-feature": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/one-time-loan-payment-feature",
+      "sourceRoot": "projects/one-time-loan-payment-feature/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/one-time-loan-payment",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
+            "outputPath": "dist/one-time-loan-payment-feature",
+            "index": "projects/one-time-loan-payment-feature/src/index.html",
+            "browser": "projects/one-time-loan-payment-feature/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "tsconfig.app.json",
+            "tsConfig": "projects/one-time-loan-payment-feature/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/one-time-loan-payment-feature/src/favicon.ico",
+              "projects/one-time-loan-payment-feature/src/assets",
+              {
+                "glob": "**/*",
+                "input": "projects/shared-components/src/lib/domain/assets",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "projects/one-time-loan-payment-feature/src/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/shared-components/src/lib/domain/styles"
+              ]
+            },
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -62,10 +108,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "one-time-loan-payment:build:production"
+              "buildTarget": "one-time-loan-payment-feature:build:production"
             },
             "development": {
-              "buildTarget": "one-time-loan-payment:build:development"
+              "buildTarget": "one-time-loan-payment-feature:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +119,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "one-time-loan-payment:build"
+            "buildTarget": "one-time-loan-payment-feature:build"
           }
         },
         "test": {
@@ -83,14 +129,11 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "tsconfig.spec.json",
+            "tsConfig": "projects/one-time-loan-payment-feature/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
+              "projects/one-time-loan-payment-feature/src/favicon.ico",
+              "projects/one-time-loan-payment-feature/src/assets"
             ],
             "scripts": []
           }

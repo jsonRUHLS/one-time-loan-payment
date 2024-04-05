@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+
+div.container {
+  height: auto !important;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px;
+  position: relative;
+  box-sizing: inherit;
+}
+
+button.make-payment-button {
+  background-color: teal;
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.image-container {
+  background-color: aliceblue;
+}

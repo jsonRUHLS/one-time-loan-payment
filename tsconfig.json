@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -14,6 +15,33 @@
     "declaration": false,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "paths": {
+      "shared-components": [
+        "dist/shared-components",
+      ],
+      "shared-components/*": [
+        "projects/shared-components/*"
+      ],
+      
+      "@loans": [
+        "dist/shared-components/lib/domain/loans",
+      ],
+      "@loans/*": [
+        "projects/shared-components/src/lib/domain/loans/*"
+      ],
+      "@payments": [
+        "dist/shared-components/lib/domain/payments",
+      ],
+      "@payments/*": [
+        "projects/shared-components/src/lib/domain/payments/*"
+      ],
+      "@styles": [
+        "dist/shared-components/styles"
+      ],
+      "@styles/*": [
+        "projects/shared-components/src/lib/domain/styles/*"
+      ]
+    },
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",

@@ -1,0 +1,30 @@
+<form [formGroup]="form" class="col-md-12">
+  <div class="container">
+    <p>Type Of Account:</p>
+
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="paymentTypeOptions"
+        id="paymentType1"
+        [value]="true"
+        (change)="emitPaymentType(true)"
+        checked
+      />
+      <label class="form-check-label" for="paymentType1"> Checking </label>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="paymentTypeOptions"
+        id="paymentType2"
+        [value]="false"
+        (change)="emitPaymentType(false)"
+      />
+      <label class="form-check-label" for="paymentType2"> Debit Card </label>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,92 @@
+<form class="row g-3" (submit)="onSubmit($event)">
+  <div class="col-md-12">
+    <shared-loan-account-number-field
+      [maxlength]="16"
+      [numberonly]="true"
+    ></shared-loan-account-number-field>
+    <hr />
+  </div>
+
+  <div class="col-md-12">
+    <shared-payment-type-field
+      (paymentTypeSelectionOutput)="paymentTypeSelection($event)"
+    ></shared-payment-type-field>
+    <hr />
+  </div>
+  <ng-container *ngIf="!showDebitCardFields; else checkingTemplate">
+    <div>
+      <div class="row">
+        <div class="col-md-8">
+          <div>
+            <shared-debit-card-number-field
+              [maxlength]="16"
+              [numberonly]="true"
+            ></shared-debit-card-number-field>
+            <hr />
+          </div>
+
+          <div>
+            <shared-debit-card-name-field
+              [maxlength]="50"
+            ></shared-debit-card-name-field>
+            <hr />
+          </div>
+
+          <div>
+            <shared-debit-card-expiration-field></shared-debit-card-expiration-field>
+            <hr />
+          </div>
+
+          <div>
+            <shared-debit-card-cvv-number-field
+              [maxlength]="3"
+              [numberonly]="true"
+            ></shared-debit-card-cvv-number-field>
+            <hr />
+          </div>
+        </div>
+        <div class="col-6 col-md-4 image-container">
+          <img src="./../../../../../../assets/cvv.png" />
+          <hr />
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #checkingTemplate>
+    <div>
+      <div class="row">
+        <div class="col-md-8">
+          <div>
+            <shared-checking-routing-number-field
+              [maxlength]="16"
+              [numberonly]="true"
+            ></shared-checking-routing-number-field>
+            <hr />
+          </div>
+
+          <div>
+            <shared-checking-account-number-field
+              [maxlength]="16"
+              [numberonly]="true"
+            ></shared-checking-account-number-field>
+            <hr />
+          </div>
+
+          <div>
+            <shared-checking-account-number-field
+              [maxlength]="16"
+              [numberonly]="true"
+            ></shared-checking-account-number-field>
+            <hr />
+          </div>
+        </div>
+        <div class="col-6 col-md-4 image-container">
+          <img src="./../../../../../../assets/check.png" />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <button class="make-payment-button" type="submit">Submit</button>
+</form>
