@@ -1,2 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@styles/shared-styles.scss';
+
+@font-face {
+    font-family: Roboto;
+    src: url('./assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url('./assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url('./assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+    font-weight: medium;
+    font-style: normal;
+}
+

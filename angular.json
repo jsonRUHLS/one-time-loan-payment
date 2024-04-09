@@ -61,6 +61,7 @@
             "assets": [
               "projects/one-time-loan-payment-feature/src/favicon.ico",
               "projects/one-time-loan-payment-feature/src/assets",
+              "projects/one-time-loan-payment-feature/src/assets/fonts",
               {
                 "glob": "**/*",
                 "input": "projects/shared-components/src/lib/domain/assets",
