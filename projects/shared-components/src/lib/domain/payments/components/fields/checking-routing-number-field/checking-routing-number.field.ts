@@ -1,37 +1,43 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, OnInit, forwardRef, inject } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { SharedMaxLengthDirective } from '../../../../core/directives/max-length.directive';
-import { GeneralLoanPaymentFormService } from '../../../services/loan-payment-form.service';
+import { SharedMaxLengthDirective, SharedNumberOnlyDirective } from '../../../../core';
+import { GeneralLoanPaymentFormService } from '../../../../loans';
 
 @Component({
-  selector: 'shared-debit-card-expiration-field',
+  selector: 'shared-checking-routing-number-field',
   standalone: true,
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    SharedNumberOnlyDirective,
     SharedMaxLengthDirective
   ],
-  templateUrl: './debit-card-expiration.field.html',
-  styleUrl: './debit-card-expiration.field.scss',
+  templateUrl: './checking-routing-number.field.html',
+  styleUrl: './checking-routing-number.field.scss',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DebitCardExpirationField),
+      useExisting: forwardRef(() => CheckingRoutingNumberField),
       multi: true
     }
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DebitCardExpirationField implements OnInit, ControlValueAccessor { 
-  @Input() type = Date;
-  @Input('boolean') required = true;
+export class CheckingRoutingNumberField implements OnInit, ControlValueAccessor {
+  @Input('placeholder') placeholder = '';
+  @Input() type = 'text';
+  @Input() inputmode = 'numeric';
+  @Input('boolean') required = false;
+  @Input() maxlength!: number;
+  @Input() minlength!: number;
+  @Input() numberonly!: boolean;
   readonly form = inject(GeneralLoanPaymentFormService).form;
 
   formControl!: FormControl;
   onTouched!: any;
   onChange!: any;
-  debitCardExpirationDate!: Date;
+  checkingRoutingNumber!: number;
 
   ngOnInit(): void {
     const validators: ValidatorFn[] = [];

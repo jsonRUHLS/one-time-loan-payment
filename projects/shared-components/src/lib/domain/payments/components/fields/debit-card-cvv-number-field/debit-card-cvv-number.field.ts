@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, OnInit, forwardRef, inject } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule, Validator, ValidatorFn, Validators } from '@angular/forms';
-import { SharedMaxLengthDirective } from '../../../../core/directives/max-length.directive';
-import { SharedNumberOnlyDirective } from '../../../../core/directives/number-only.directive';
-import { GeneralLoanPaymentFormService } from '../../../services/loan-payment-form.service';
+import { SharedMaxLengthDirective, SharedNumberOnlyDirective } from '../../../../core';
+import { GeneralLoanPaymentFormService } from '../../../../loans';
 
 @Component({
-  selector: 'shared-debit-card-number-field',
+  selector: 'shared-debit-card-cvv-number-field',
   standalone: true,
   imports: [
     CommonModule,
@@ -14,18 +13,18 @@ import { GeneralLoanPaymentFormService } from '../../../services/loan-payment-fo
     SharedNumberOnlyDirective,
     SharedMaxLengthDirective
   ],
-  templateUrl: './debit-card-number.field.html',
-  styleUrl: './debit-card-number.field.scss',
+  templateUrl: './debit-card-cvv-number.field.html',
+  styleUrl: './debit-card-cvv-number.field.scss',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DebitCardNumberField),
+      useExisting: forwardRef(() => DebitCardCVVNumberField),
       multi: true
     }
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DebitCardNumberField implements OnInit, ControlValueAccessor { 
+export class DebitCardCVVNumberField implements OnInit, ControlValueAccessor { 
   @Input('placeholder') placeholder = '';
   @Input() type = 'text';
   @Input() inputmode = 'numeric';
@@ -38,7 +37,7 @@ export class DebitCardNumberField implements OnInit, ControlValueAccessor {
   formControl!: FormControl;
   onTouched!: any;
   onChange!: any;
-  loanAccountNumber!: number;
+  debitCardCCVNumber!: number;
 
   ngOnInit(): void {
     const validators: ValidatorFn[] = [];

@@ -1,2 +1,2 @@
-export * from './fields/index';
-export * from './forms/index';
+export * from './fields';
+export * from './forms';

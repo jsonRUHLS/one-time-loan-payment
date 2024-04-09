@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, OnInit, forwardRef, inject } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule, Validator, ValidatorFn, Validators } from '@angular/forms';
-import { SharedMaxLengthDirective } from '../../../../core/directives/max-length.directive';
-import { SharedNumberOnlyDirective } from '../../../../core/directives/number-only.directive';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
+import { SharedMaxLengthDirective, SharedNumberOnlyDirective } from '../../../../core';
 import { GeneralLoanPaymentFormService } from '../../../services/loan-payment-form.service';
 
 @Component({
@@ -25,7 +24,7 @@ import { GeneralLoanPaymentFormService } from '../../../services/loan-payment-fo
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoanAccountNumberField implements OnInit, ControlValueAccessor { 
+export class LoanAccountNumberField implements OnInit, ControlValueAccessor {
   @Input('placeholder') placeholder = '';
   @Input() type = 'text';
   @Input() inputmode = 'numeric';
