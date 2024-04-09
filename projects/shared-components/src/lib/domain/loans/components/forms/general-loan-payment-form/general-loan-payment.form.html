@@ -55,22 +55,23 @@
   </ng-template>
 
   <ng-template #showCheckingFieldsTemplate>
-    <div class="row">
-      <div class="col-xs-12 col-md-7">
-        <div class="col-xs-12 col-md-6">
-          <shared-checking-routing-number-field
-            [maxlength]="16"
-            [numberonly]="true"
-          ></shared-checking-routing-number-field>
-        </div>
-
-        <div class="col-xs-12 col-md-6">
-          <shared-checking-account-number-field
-            [maxlength]="16"
-            [numberonly]="true"
-          ></shared-checking-account-number-field>
-        </div>
-      </div>
+    <div class="row border">
+      <shared-checking-routing-number-field
+        [maxlength]="16"
+        [numberonly]="true"
+      ></shared-checking-routing-number-field>
+    </div>
+    <div class="row border">
+      <shared-checking-account-number-field
+        [maxlength]="16"
+        [numberonly]="true"
+      ></shared-checking-account-number-field>
+    </div>
+    <div class="row border">
+      <shared-confirm-checking-account-number-field
+        [maxlength]="16"
+        [numberonly]="true"
+      ></shared-confirm-checking-account-number-field>
     </div>
   </ng-template>
 </form>

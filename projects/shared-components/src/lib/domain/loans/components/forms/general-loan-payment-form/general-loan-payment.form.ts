@@ -11,6 +11,7 @@ import { DebitCardExpirationField } from '../../fields/debit-card-expiration-fie
 import { DebitCardCVVNumberField } from '../../fields/debit-card-cvv-number-field/debit-card-cvv-number.field';
 import { CheckingAccountNumberField } from '../../fields/checking-account-number-field/checking-account-number.field';
 import { CheckingRoutingNumberField } from '../../fields/checking-routing-number-field/checking-routing-number.field';
+import { ConfirmCheckingAccountNumberField } from '../../fields/confirm-checking-account-number-field/confirm-checking-account-number.field';
 
 @Component({
   selector: 'shared-general-loan-payment-form',
@@ -19,6 +20,7 @@ import { CheckingRoutingNumberField } from '../../fields/checking-routing-number
     CommonModule,
     CheckingAccountNumberField,
     CheckingRoutingNumberField,
+    ConfirmCheckingAccountNumberField,
     DebitCardCVVNumberField,
     DebitCardExpirationField,
     DebitCardNameField,

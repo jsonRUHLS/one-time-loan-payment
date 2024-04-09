@@ -13,19 +13,3 @@
       />
   </label>
 </div>
-
-<div [formGroup]="form">
-  <label for="confirmCheckingAccountNumber"
-    >Confirm Bank Account Number:
-      <input
-        id="confirmCheckingAccountNumber"
-        name="confirmCheckingAccountNumber"
-        [placeholder]=""
-        [formControl]="form.controls.checkingAccountNumber"
-        type="text"
-        [sharedMaxLength]="maxlength"
-        [sharedNumberOnly]="numberonly"
-        minlength="9"
-      />
-  </label>
-</div>

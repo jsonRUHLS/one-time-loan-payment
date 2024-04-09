@@ -12,6 +12,7 @@ export class GeneralLoanPaymentFormService {
     debitCardCVVNumber: ['', [Validators.required]],
     checkingRoutingNumber: ['', [Validators.required]],
     checkingAccountNumber: ['', [Validators.required]],
+    confirmCheckingAccountNumber: ['', [Validators.required]],
   })
   constructor() {}
 }
