@@ -13,3 +13,28 @@
     width: 100%;
   }
 }
+
+button.make-payment-button {
+  background-color: #00a39e;
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  border: none;
+  //border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin-top: 12px;
+  //margin: 0.5rem;
+  cursor: pointer;
+  width: 150px;
+  //margin: 0 auto;
+}
+
+@media screen and (max-width: 767.98px){
+  button.make-payment-button {
+    margin: 0 auto;
+    margin-top: 12px;
+    width: 95vw;
+  }
+
+}
