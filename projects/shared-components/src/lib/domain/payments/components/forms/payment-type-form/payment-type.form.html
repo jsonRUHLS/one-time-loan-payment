@@ -1,6 +1,6 @@
-<form [formGroup]="form" class="col-md-12">
-  <div class="container">
-    <p>Type Of Account:</p>
+<form [formGroup]="form">
+  <!-- <div class="container"> -->
+    <p class="label-p">Type Of Account:</p>
 
     <div class="form-check form-check-inline">
       <input
@@ -9,7 +9,7 @@
         name="paymentTypeOptions"
         id="paymentType1"
         [value]="true"
-        (change)="emitPaymentType(true)"
+        (change)="emitPaymentType(false)"
         checked
       />
       <label class="form-check-label" for="paymentType1"> Checking </label>
@@ -22,9 +22,9 @@
         name="paymentTypeOptions"
         id="paymentType2"
         [value]="false"
-        (change)="emitPaymentType(false)"
+        (change)="emitPaymentType(true)"
       />
       <label class="form-check-label" for="paymentType2"> Debit Card </label>
     </div>
-  </div>
+  <!-- </div> -->
 </form>

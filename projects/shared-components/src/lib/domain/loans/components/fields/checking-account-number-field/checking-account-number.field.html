@@ -1,18 +1,31 @@
-<div [formGroup]="form" class="col-md-12 row">
-    <label for="checkingAccountNumber"
-      >Bank Account Number:
-      <div class="col-sm-10">
-        <input
-          id="checkingAccountNumber"
-          name="checkingAccountNumber"
-          [placeholder]=""
-          [formControl]="form.controls.checkingAccountNumber"
-          type="text"
-          [sharedMaxLength]="maxlength"
-          [sharedNumberOnly]="numberonly"
-          minlength="9"
-        />
-      </div>
-    </label>
-  </div>
-  
+<div [formGroup]="form">
+  <label for="checkingAccountNumber"
+    >Bank Account Number:
+      <input
+        id="checkingAccountNumber"
+        name="checkingAccountNumber"
+        [placeholder]=""
+        [formControl]="form.controls.checkingAccountNumber"
+        type="text"
+        [sharedMaxLength]="maxlength"
+        [sharedNumberOnly]="numberonly"
+        minlength="9"
+      />
+  </label>
+</div>
+
+<div [formGroup]="form">
+  <label for="confirmCheckingAccountNumber"
+    >Confirm Bank Account Number:
+      <input
+        id="confirmCheckingAccountNumber"
+        name="confirmCheckingAccountNumber"
+        [placeholder]=""
+        [formControl]="form.controls.checkingAccountNumber"
+        type="text"
+        [sharedMaxLength]="maxlength"
+        [sharedNumberOnly]="numberonly"
+        minlength="9"
+      />
+  </label>
+</div>

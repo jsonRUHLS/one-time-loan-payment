@@ -50,6 +50,7 @@ export class GeneralLoanPaymentFormComponent {
       return;
     } else {
       console.log("Submitting form...!", this.form.value);
+      
     }
 
   }

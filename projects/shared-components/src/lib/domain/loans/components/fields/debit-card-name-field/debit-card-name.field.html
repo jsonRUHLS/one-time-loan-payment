@@ -1,17 +1,14 @@
-<div [formGroup]="form" class="col-md-12 row">
-    <label for="debitCardName"
-      >Name On Card:
-      <div class="col-sm-10">
-        <input
-          id="debitCardName"
-          name="debitCardName"
-          [placeholder]=""
-          [formControl]="form.controls.debitCardName"
-          type="text"
-          [sharedMaxLength]="maxlength"
-          minlength="9"
-        />
-      </div>
-    </label>
-  </div>
-  
+<div [formGroup]="form">
+  <label for="debitCardName"
+    >Name On Card:
+      <input
+        id="debitCardName"
+        name="debitCardName"
+        [placeholder]=""
+        [formControl]="form.controls.debitCardName"
+        type="text"
+        [sharedMaxLength]="maxlength"
+        minlength="9"
+      />
+  </label>
+</div>
